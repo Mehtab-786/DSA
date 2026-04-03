@@ -14,3 +14,4 @@ function isPrime(num) {
     
     return true
 }
+export default isPrime
