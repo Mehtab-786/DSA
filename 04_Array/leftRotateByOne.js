@@ -1,4 +1,5 @@
-// Take an array as argument and rotate the elements left by one place
+// Left Rotate the Array by One
+// Problem Statement: Given an integer array nums, rotate the array to the left by one.
 
 function leftRotateByOne(arr) {
     let first =  arr[0];
@@ -8,3 +9,6 @@ function leftRotateByOne(arr) {
     arr[arr.length - 1]  = first
     return arr
 }
+
+// time complexity = 0(n)
+// space = O(1)

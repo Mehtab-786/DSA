@@ -1,3 +1,5 @@
+// Move zeroes in-place to end in the array .
+
 function moveZerosToEnd(arr) {
     let i=0, j = 0
     while (i < arr.length) {
