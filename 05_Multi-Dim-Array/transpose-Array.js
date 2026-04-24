@@ -1,11 +1,12 @@
-function tranposeArrInPlace(arr) {  // equal row & column
-    let newArr = Array.from({ length: arr.length }, () => Array(arr.length))
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i].length; j++) {
-            newArr[j][i] = arr[i][j]
+function tranposeArrInPlace(matrix) {  // equal row & column
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = i; j < matrix[i].length; j++) {
+            let temp = matrix[i][j]
+            matrix[i][j] = matrix[j][i]
+            matrix[j][i] = temp
         }
     }
-    console.log(newArr)
+    return matrix
 }
 
 function tranposeArr(arr) {
