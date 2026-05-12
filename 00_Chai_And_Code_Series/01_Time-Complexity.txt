@@ -12,3 +12,16 @@
 // 1 < loglogN < logN < n < n^2 < n^3 < n^4 ............ 2^n
 // n = size of input
 
+// Mathematical Equation
+1. Constant Equation -> O(1)
+2. Linear Equation -> O(n)
+3. Quadratic Equation -> O(n^2)
+4. Cubic Equation -> O(n^3)
+5. Logrithmic Equation -> O(logn)
+6. Exponential Equation -> O(3^n)
+
+// Types of Analysis
+1. Best case -> Omega notation
+2. Average case -> Theta notation
+3. Worst case -> BigO notation
+
