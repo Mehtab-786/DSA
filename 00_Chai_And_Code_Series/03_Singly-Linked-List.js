@@ -56,15 +56,50 @@ class SinglyLinkedList { // linked list
         temp.next = newNode
     }
 
+    deleteNode(value) {
+        if(this.head == null){
+            console.log('List is empty')
+            return
+        }
+
+        if(this.head.data == value){
+            this.head = this.head.next
+            return
+        }
+        
+        let temp = this.head
+        let prev = temp
+        
+        while (temp.next != null && temp.data != value) {
+            prev = temp
+            temp = temp.next
+        }
+
+        // value not found
+        if(temp == null){
+            console.log('No data found !!')
+            return
+        }
+
+        // delete node 
+        prev.next = temp.next
+    }
     
+    printList() {
+        let temp = this.head
+        while (temp != null) {
+            console.log(temp.data)
+            temp = temp.next
+        }
+    }
 }
 
 
 let singlyLinkedList = new SinglyLinkedList()
-singlyLinkedList.insertAtEnd(10)
-singlyLinkedList.insertAtEnd(20)
-singlyLinkedList.insertAtEnd(30)
-singlyLinkedList.insertAtStart(5)
-// singlyLinkedList.insertAtMid(20.5, 20)
-singlyLinkedList.deleteNode(5)
-singlyLinkedList.printList()
+// singlyLinkedList.insertAtEnd(10)
+// singlyLinkedList.insertAtEnd(20)
+// singlyLinkedList.insertAtEnd(30)
+// singlyLinkedList.insertAtStart(5)
+// // singlyLinkedList.insertAtMid(20.5, 20)
+// singlyLinkedList.deleteNode(5)
+// singlyLinkedList.printList()
