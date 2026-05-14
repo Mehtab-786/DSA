@@ -32,6 +32,31 @@ class SinglyLinkedList { // linked list
         temp.next = newNode
     }
 
+    insertAtStart(value) {
+        let newNode = new Node(value);
+        if (this.head == null) {
+            this.head = newNode
+            return
+        }
+        newNode.next = this.head;
+        this.head = newNode
+    }
+
+    insertAtMid(value, location) { //location -> starting position
+        let newNode = new Node(value)
+        let temp = this.head
+        while (temp.next != null && temp.data != location) {
+            temp = temp.next
+        }
+        if(temp.next == null){
+            console.log("No data found !!")
+            return 
+        }
+        newNode.next = temp.next
+        temp.next = newNode
+    }
+
+    
 }
 
 
