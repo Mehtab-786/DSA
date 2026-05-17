@@ -38,7 +38,28 @@ class DoublyLL {
         newNode.prev = temp
     }
 
+    insertAtMiddle(value, position) {
+        let newNode = new Node(value)
+        let temp = this.head
+        if (this.head == null) {
+            this.head = newNode
+            return
+        }
 
+        while (temp != null && temp.data != position) {
+            temp = temp.next
+        }
+
+        if (temp == null) {
+            console.log(`Position ${position} not found in the list.`);
+            return
+        }
+        newNode.next = temp.next
+        temp.next.prev = newNode
+        newNode.prev = temp
+        temp.next = newNode
+
+    }
 
     deleteNode(value) {
         let temp = this.head
