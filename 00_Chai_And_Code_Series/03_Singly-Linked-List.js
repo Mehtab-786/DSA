@@ -48,35 +48,35 @@ class SinglyLinkedList { // linked list
         while (temp.next != null && temp.data != location) {
             temp = temp.next
         }
-        if(temp.next == null){
+        if (temp.next == null) {
             console.log("No data found !!")
-            return 
+            return
         }
         newNode.next = temp.next
         temp.next = newNode
     }
 
     deleteNode(value) {
-        if(this.head == null){
+        if (this.head == null) {
             console.log('List is empty')
             return
         }
 
-        if(this.head.data == value){
+        if (this.head.data == value) {
             this.head = this.head.next
             return
         }
-        
+
         let temp = this.head
         let prev = temp
-        
+
         while (temp.next != null && temp.data != value) {
             prev = temp
             temp = temp.next
         }
 
         // value not found
-        if(temp == null){
+        if (temp == null) {
             console.log('No data found !!')
             return
         }
@@ -84,7 +84,7 @@ class SinglyLinkedList { // linked list
         // delete node 
         prev.next = temp.next
     }
-    
+
     printList() {
         let temp = this.head
         while (temp != null) {
@@ -97,9 +97,35 @@ class SinglyLinkedList { // linked list
 
 let singlyLinkedList = new SinglyLinkedList()
 // singlyLinkedList.insertAtEnd(10)
-// singlyLinkedList.insertAtEnd(20)
-// singlyLinkedList.insertAtEnd(30)
-// singlyLinkedList.insertAtStart(5)
-// // singlyLinkedList.insertAtMid(20.5, 20)
-// singlyLinkedList.deleteNode(5)
-// singlyLinkedList.printList()
+
+
+
+// Given a singly linked list represented as an array and an integer `val`, insert the value `val` into the linked list at a specified position. If the position is greater than the length of the linked list, append the value to the end. Return the linked list as an array after the insertion.
+
+function insertIntoList(head, pos, val) {
+    // head: array of integers representing the linked list
+    // pos: position to insert the new value
+    // val: value to be inserted
+
+    // Your implementation here
+    let newArr = []
+    if(pos === 0) return [val, ...head]
+    if(pos >=    head.length) return [...head, val]
+    for (let i = 0; i < head.length; i++) {
+        if (i == pos) {
+            newArr.push(val)
+        }
+        newArr.push(head[i])
+    }
+    return newArr;
+}
+
+// console.log(insertIntoList([1,2,3,4], 4, 5))
+// console.log(insertIntoList([1,2,4], 2, 3))
+
+// class Node {
+//     constructor(data) {
+//         this.data = data
+//         this.next = null
+//     }
+// }
