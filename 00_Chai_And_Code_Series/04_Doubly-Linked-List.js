@@ -77,13 +77,13 @@ class DoublyLL {
                 temp.prev.next = temp.next
                 temp.next.prev = temp.prev
                 return;
-            }else temp = temp.next
+            } else temp = temp.next
         }
-        if(temp.data == value){
+        if (temp.data == value) {
             temp.prev.next = null
             return
         }
-        
+
     }
 
     printList() {
@@ -110,3 +110,28 @@ let DoublyLinkedList = new DoublyLL()
 // DoublyLinkedList.insertAtMiddle(50, 100)
 // DoublyLinkedList.deleteNode(3)
 // DoublyLinkedList.printList()
+
+
+
+// questions ------------
+
+//    * Counts the number of nodes in a doubly linked list.
+//    * @param {Object|null} head - The head node of the doubly linked list (or null for empty list).
+//    * Each node is expected to have the shape `{ val: number, prev: Object|null, next: Object|null }`.
+//    * @returns {number} The total number of nodes.
+function countNodes(head) {
+    // Your implementation here
+    let count = 0;
+
+    let current = head;
+    while (current != null) {
+        count++;
+        current = current.next;
+    }
+    
+    return count;
+}
+
+console.log(countNodes)
+// {"values":[5,10,15,20]}
+
