@@ -110,7 +110,13 @@ function inOrder(root) {
         inOrder(root.right)
     }
 }
-
+function postOrder(root) {
+    if (root != null) {
+        postOrder(root.left)
+        postOrder(root.right)
+        console.log(root.data + ' ');
+    }
+}
 
 let root = new Node(1);
 root.left = new Node(3);
@@ -122,4 +128,4 @@ root.right.right = new Node(8);
 
 preorder(root)
 inOrder(root)
-// postOrder(root)
+postOrder(root)
