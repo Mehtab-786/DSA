@@ -14,26 +14,42 @@
 // ANSWER -> just do Inorder traversal of all, will get same answer
 
 class Node {
-    constructor(value){
+    constructor(value) {
         this.data = value;
         this.left = null;
         this.right = null;
-    } 
-
-    insert(root,value){
-        if(root == null){
-            return new Node(value);
-        }
-        if(root.data == value) {
-            return root;
-        }
-        if(root.data > value){
-            root.left = insert(root.left,value)
-        } else {
-           root.right = insert(root.right,value)
-        }
     }
 
+    insert(root, value) {
+        if (root == null) {
+            return new Node(value);
+        }
+        if (root.data == value) {
+            return root;
+        }
+        if (root.data > value) {
+            root.left = insert(root.left, value)
+        } else {
+            root.right = insert(root.right, value)
+        }
+        return root
+    }
+
+    search(root, value) {
+        if (root == null) {
+            console.log('Element not found');
+            return;
+        }
+        if (root.data == value) {
+            console.log('Element found');
+            return;
+        }
+        if (root.data > value) {
+            search(root.left, value)
+        } else {
+            search(root.right, value)
+        }
+    }
 }
 
 function inOrder(root) {
